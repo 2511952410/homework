@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link href="css/styleCss.css" rel="stylesheet" type="text/css" />
+    <link href="js/jquery_weather/s/demo.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery_weather/js/jquery.leoweather.min.js"></script>
+</head>
+<body >
+<div class="divAll01">
+
+    <div class="divTop">
+        <img src="img/topLogo.png" class="topImg"/>
+        <ul class="topUl01">
+            <li><a href="index.html" class="topActive">首页</a> </li>
+            <li><a href="introduction.html">景区介绍</a> </li>
+            <li><a href="orderLine.html">在线预定</a> </li>
+            <li><a href="guide.html">旅游指南</a> </li>
+            <li><a href="Raiders.html">旅游攻略</a> </li>
+            <li><a href="news.html">景区动态</a> </li>
+            <li><a href="line.html">线线互动</a> </li>
+              <li><a href="grq.html">个人介绍      </a></li>
+        </ul>
+        <div class="wehterDiv" id="demo"><script>$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><div>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</div>'});</script></div>
+    </div>
+
+    <div class="orderCon">
+<a href="#" class="orderClose"></a>
+        <div class="orderCon01">
+            <div class="orderH orderH01"><a href="#" class="ha01" id="order01">门票预订</a><a href="#" id="order02">酒店预订</a><a href="#" id="order03">餐饮预订</a> </div>
+            <div class="orderTicket">
+                <img src="img/intro01.png" class="orderIMg01"/>
+                <div class="orderTicketLeft">
+                    <h3>神仙居景区<span class="sqpanRed">￥120</span></h3>
+                    <p class="orderP">幽幽神仙居，融险峰、幽谷、秀林、奇瀑于一体，总面积15.8平方公里。景区内奇峰环列，山崖陡峭，基岩落石处处成景，有鬼斧神功之作的将军岩、神态安详的睡美人、
+                        因风作态的飞天瀑等景点60多处，身临其景，处于袅袅雾霭之中，大有飘飘欲仙之感。
+                        神仙居景区是仙居五大风景名胜区之一，也是仙居风景名胜区的典型代表，神仙居景区之所以首先得到开发，就是因为她集“奇、险、清、幽”于一体.</p>
+                    <p><a href="#" class="orderA">立即预定</a> </p>
+                </div>
+                <div class="clear"></div>
+                <img src="img/intro01.png" class="orderIMg01"/>
+                <div class="orderTicketLeft">
+                    <h3>山水间景区<span class="sqpanRed">￥100</span></h3>
+                    <p class="orderP">仙居神仙居映象大酒店位于仙居县国家重点名胜区神仙居入口处，距穿城中路17公里，交通十分便利。
+                        仙居神仙居映象大酒店是集住宿、餐饮、娱乐、商务等服务为一体的由马来西亚立强发展有限公司全额投资的一家外资旅游饭店。
+                        酒店拥有各式精致客房，并附设各式餐饮、会议、娱乐休闲设施。入住仙居神仙居映象大酒店，感受神仙眷侣般的悠闲生活。
+                        神仙居引人入胜之处，在于那里的一山一水、 一崖一洞、一石一峰都能自成一格，有不　类他山，异乎寻常，出人 意料， 匪夷所思的景观形态。.</p>
+                    <p><a href="#" class="orderA">立即预定</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divfix">
+   
+    </div>
+    <div class="divfoot">
+        <div class="divfootLeft">
+           
+        </div>
+        <div class="divfootRight">
+            <a><img src="img/weixin.png"/> </a>
+            <a><img src="img/xlwb.png"/> </a>
+           
+        </div>
+        <div class="divfootCenter">Copyright &copy; Copyright  2019 - 2021  南工院 移动1811  刘通版权所有 </div>
+    </div>
+<div class="divImg">
+    <ul>
+        <li><img src="img/bg01.jpg"/> </li>
+        <li><img src="img/bg02.jpg"/> </li>
+        <li><img src="img/bg03.jpg"/> </li>
+    </ul>
+</div>
+
+</div>
+
+
+
+<script>
+    $(function () {
+        $(".topUl01 li a").click(function () {
+            $(this).addClass("topActive");
+            $(this).parent().siblings().find("a").removeClass("topActive");
+
+        })
+
+    })
+</script>
+<script>
+    $(function () {
+        $("#order01").click(function () {
+            $(".orderH").addClass("orderH01").removeClass("orderH02").removeClass("orderH03")
+
+        })
+        $("#order02").click(function () {
+            $(".orderH").addClass("orderH02").removeClass("orderH01").removeClass("orderH03");
+
+        })
+        $("#order03").click(function () {
+            $(".orderH").addClass("orderH03").removeClass("orderH01").removeClass("orderH02");
+
+        })
+    })
+</script>
+</body>
+</html>
