@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link href="css/styleCss.css" rel="stylesheet" type="text/css" />
+    <link href="js/jquery_weather/s/demo.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery_weather/js/jquery.leoweather.min.js"></script>
+</head>
+<body>
+<div class="divAll">
+    <header class="introductionHeard">
+    <div class="divTop">
+        <img src="img/topLogo.png" class="topImg"/>
+        <ul class="topUl01">
+            <li><a href="index.html" class="topActive">首页</a> </li>
+            <li><a href="introduction.html">景区介绍</a> </li>
+            <li><a href="orderLine.html">在线预定</a> </li>
+            <li><a href="guide.html">旅游指南</a> </li>
+            <li><a href="Raiders.html">旅游攻略</a> </li>
+            <li><a href="news.html">景区动态</a> </li>
+            <li><a href="line.html">线线互动</a> </li>
+              <li><a href="grq.html">个人介绍      </a></li>
+        </ul>
+        <div class="wehterDiv" id="demo"><script>$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><div>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</div>'});</script></div>
+    </div>
+    </header>
+    <div class="lineCon">
+        <h2 class="lineH"><i class="lineH_i"></i> <span>在线留言</span></h2>
+        <p class="lineP">您好，欢迎来到古北水镇游客服务中心，请详细填写您所遇到的问题，或想表达的内容，并留下准确的E-mail地址和联系方式，我们将尽快给您回复。</p>
+<p class="lineP01"><label>你的姓名：</label><input type="text" placeholder="请输入姓名"></p>
+        <p class="lineP01"><label>你的电话：</label><input type="text" placeholder="请输入电话"></p>
+        <p class="lineP01"><label>你的邮箱：</label><input type="email" placeholder="请输入邮箱"></p>
+        <p class="lineP01"><label style="position: relative;top:-100px">你的留言：</label><textarea class="linearea"></textarea></p>
+        <p><button class="lineBut">提交</button></p>
+    </div>
+    <div class="divfix">
+ 
+    </div>
+    <div class="divfoot01">
+        <div class="divfootLeft">
+          
+        </div>
+        <div class="divfootRight">
+            <a><img src="img/weixin.png"/> </a>
+            <a><img src="img/xlwb.png"/> </a>
+         
+
+        </div>
+        <div class="divfootCenter">Copyright &copy; Copyright  2019 - 2021  南工院 移动1811  刘通版权所有</div>
+    </div>
+<div class="divImg">
+    <ul>
+        <li><img src="img/bg01.jpg"/> </li>
+        <li><img src="img/bg02.jpg"/> </li>
+        <li><img src="img/bg03.jpg"/> </li>
+    </ul>
+</div>
+    <div class="imgBut">
+        <ul>
+            <li class="indexActive"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<script>
+    $(function () {
+        $(".topUl01 li a").click(function () {
+            $(this).addClass("topActive");
+            $(this).parent().siblings().find("a").removeClass("topActive");
+
+        })
+
+    })
+</script>
+</body>
+</html>

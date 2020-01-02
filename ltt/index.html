@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link href="css/styleCss.css" rel="stylesheet" type="text/css" />
+    <link href="js/jquery_weather/s/demo.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery_weather/js/jquery.leoweather.min.js"></script>
+</head>
+<body>
+<div class="divAll01">
+    <div class="divTop">
+        <img src="img/topLogo.png" class="topImg"/>
+        <ul class="topUl01">
+            <li><a href="index.html" class="topActive">首页</a> </li>
+            <li><a href="introduction.html">景区介绍</a> </li>
+            <li><a href="orderLine.html">在线预定</a> </li>
+            <li><a href="guide.html">旅游指南</a> </li>
+            <li><a href="Raiders.html">旅游攻略</a> </li>
+            <li><a href="news.html">景区动态</a> </li>
+            <li><a href="line.html">线线互动</a> </li>
+            <li><a href="grq.html">个人介绍      </a></li>
+        </ul>
+        <div class="wehterDiv" id="demo"><script>$('#demo').leoweather({format:'<i class="icon-{图标}">{气温}℃</i><div>{城市}<span>|</span>{天气}<span>|</span>{风向}{风级}级</div>'});</script></div>
+    </div>
+  
+    <div class="indexContent">
+        <h3><span class="hSpan">景区动态</span></h3>
+        <div class="indexContentDiv">
+            <img src="img/test.jpg" class="indexImg"/>
+            <div class="indexcontentdivR">
+                <h2>2019景区优秀服务排名</h2>
+                <p>根据《2019年江苏xxxxx规定，现将总成绩予以公布。请进入体检人员携带本人二代身份证和准考证，
+                    于2019年12月25日（星期三）上午7：00分到供电大楼门口集合，须空腹，并携带5000元体检费（体检费用届时按医院实际收费标准支付）。应聘人员不按规定时间、
+                    地点参加体检的，视作放弃体检。</p>
+                <p class="moreP"><a href="#"><--查看详情--></a> </p>
+            </div>
+        </div>
+    </div>
+    <div class="divfoot">
+      
+        <div class="divfootRight">
+            <a><img src="img/weixin.png"/> </a>
+            <a><img src="img/xlwb.png"/> </a>
+        
+        </div>
+        <div class="divfootCenter">	Copyright &copy; Copyright  2019 - 2021  南工院 移动1811  刘通版权所有</div>
+    </div>
+<div class="divImg">
+    <ul>
+        <li><img src="img/bg01.jpg"/> </li>
+        <li><img src="img/bg02.jpg"/> </li>
+        <li><img src="img/bg03.jpg"/> </li>
+    </ul>
+</div>
+    <div class="imgBut">
+        <ul>
+            <li class="indexActive"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+//    首页图片滚动代码
+    $(function () {
+        adaptiveImage()
+        showImg();
+
+    })
+    function showImg() {
+        var divIMgWidth=$(".divImg").width();
+        var len=$(".divImg ul li").length;
+        var picTime;
+        var index=0;
+        $(".divImg ul").css("width",divIMgWidth*(len));
+        $(".divImg").hover(function () {
+            clearInterval(picTime);
+
+        },function () {
+            picTime=setInterval(function () {
+                showPic(index);
+                index++;
+                if(index==len){
+                    index=0;}
+
+            },3000)
+
+        }).trigger("mouseleave")
+        //图片滚动
+        function showPic(index) {
+            var nowLeft=divIMgWidth*index;
+            $(".divImg ul").stop(true,false).animate({"left":-nowLeft},300);
+            $(".imgBut ul li").eq(index).addClass("indexActive").siblings().removeClass("indexActive");
+
+        }
+
+    }
+    //首页大图自适应大小
+    function adaptiveImage() {
+        var win_Width =$(document).width();
+        var win_Height =$(document).height();
+
+
+        $(".divImg").css('width',win_Width);
+        $(".divImg").css('height',win_Height);
+
+        $(".divImg ul").css('height',win_Height);
+
+        $(".divImg ul li").css('width',win_Width);
+        $(".divImg ul li").css('height',win_Height);
+
+        $(".divImg ul li img").css('width',win_Width);
+        $(".divImg ul li img").css('height',win_Height);
+    }
+</script>
+<script>
+    $(function () {
+        $(".topUl01 li a").click(function () {
+            $(this).addClass("topActive");
+            $(this).parent().siblings().find("a").removeClass("topActive");
+
+        })
+
+    })
+</script>
+</body>
+</html>
